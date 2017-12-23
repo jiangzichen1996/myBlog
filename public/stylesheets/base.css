@@ -1,5 +1,6 @@
 * { margin: 0; padding: 0 }
-body { font: 12px/1.5 'Microsoft Yahei', 'Simsun'; color: #666666; background: #fff }
+
+body { font: 12px/1.5 'Microsoft Yahei', 'Simsun'; color: #666666; background: #eeeeee }
 img { border: 0; display: block }
 ul { list-style: none; }
 h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
@@ -11,8 +12,8 @@ a:hover { text-decoration: none; }
 .f_l { float: left }
 .f_r { float: right }
 .middle {margin:0 auto;}
-.l_box { width: 670px; }
-.r_box { width: 300px; }
+.l_box { width: 670px; background: #fff; box-shadow:0 1px 2px 0 #E2E2E2;}
+.r_box { width: 300px; background: #fff; box-shadow:0 1px 2px 0 #E2E2E2;}
 header { width: 1000px; margin: 20px auto; overflow: hidden; clear: both; position: relative}
 #topnav { width: 60%; background: rgb(131,175,155); height: 46px; line-height: 46px; text-align: center; border-radius: 46px; }
 #topnav a { display: inline-block; font-size: 18px; font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif; padding: 0 20px; }

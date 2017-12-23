@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/stylesheets/base.css" rel="stylesheet">
+    <link href="/stylesheets/index.css" rel="stylesheet">
+    <link href="/stylesheets/mask.css" rel="stylesheet">
+    <link href="/stylesheets/admin.css" rel="stylesheet">
+    
+
+    <title>博客分类</title>
+</head>
+<body>
+    <%include header.ejs %>
+    <article>
+    <div class="adminWel"><a href="/">返回我的首页</a> >> 模块名称</div> 
+    <%include AdminLeft.ejs %>
+    <div class="admin_box">
+            <div class="addtype">
+                <h3>添加博客分类</h3>      
+                <form action="/addBlogType" method="post">          
+                    <label for="typeName">
+                        分类名称:<input type="text" name="typeName" >
+                    </label>
+                        <button>提交</button>
+                </form>                              
+                    <h3>博客分类</h3> 
+                    <table cellpadding="1" cellspace="1">
+                        <tbody>
+                            <tr>
+                                <th>序号</th>
+                                <th>分类名</th>
+                                <th>文章</th>
+                                <th>操作</th>
+                            </tr>
+                            <% for(let i=0;i<types.length;i++){
+                            %>
+                                <tr>
+                                    <td class="idx"><%=types[i].type_id%></td>
+                                    <td class="name"><a href="" title="点此修改博客分类" ><%= types[i].type_name %></a></td>
+                                    <td class="num"></td>
+                                    <td class="opts">
+                                        <a href="" title="点此修改博客内容">修改</a>
+                                        <a href="">删除</a>
+                                    </td>
+                                </tr>
+                            <%}%>
+                        </tbody>
+
+                    </table>
+            </div>
+        
+    </div>
+
+    </article>
+
+    <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/sliders.js"></script>
+    <script type="text/javascript" src="/javascripts/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+
+h1, h2, h3, h4, h5, h6 { text-align: center; }
+h2{
+    font-size: 24px;
+}
+p{
+    font-size: 16px;
+    
+    text-indent: 2ch;
+}
+.detail-box{box-shadow:0 1px 2px 0 #E2E2E2;}
+.detail-tags{display: flex;}
+.detail-tags span {
+    color: black;
+    flex-grow: 1;
+    border-bottom:1px solid; 
+}

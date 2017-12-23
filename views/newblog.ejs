@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/stylesheets/base.css" rel="stylesheet">
+    <link href="/stylesheets/index.css" rel="stylesheet">
+    <link href="/stylesheets/mask.css" rel="stylesheet">
+    <link href="/stylesheets/admin.css" rel="stylesheet">
+    
+
+    <title>添加博客</title>
+</head>
+<body>
+    <%include header.ejs %>
+    <article>
+    <div class="adminWel"><a href="/">返回我的首页</a> >> 模块名称</div> 
+    <%include AdminLeft.ejs %>
+    <div class="admin_box">
+        <form action="/addArticle">
+            <h3>标题(必填)</h3>
+            <label for="title">
+                    <input type="text" class="artile-title" name="title">
+                    存放于
+                    <select name="tags">
+                        <option selected="selected" value="工作日志">工作日志</option>
+                        <option value="日常记录">日常记录</option>
+                        <option value="转载的文章">转载的文章</option>
+                    </select>
+            </label>
+            <h3>内容(必填)</h3>
+            
+            <textarea name="content" id="blog_content" cols="30" rows="10"></textarea>
+            
+        </form>
+        
+    </div>
+
+    </article>
+
+    <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/sliders.js"></script>
+    <script type="text/javascript" src="/javascripts/index.js"></script>
+</body>
+</html>
