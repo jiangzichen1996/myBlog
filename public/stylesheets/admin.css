@@ -56,3 +56,24 @@ h3{font-size: 20px;margin: 5px;margin-left:0;}
     text-align: start;
     
 }
+#blog_content{
+    width: 600px;
+    height: 200px;
+}
+.big_btn{
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bolder;
+
+}
+#list_current{
+    background: rgb(200,200,169);
+}
+.choice{
+    display: flex;
+}
+.choice a{
+    flex-grow: 1;
+    color:black;
+}

@@ -4,9 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link href="/stylesheets/base.css" rel="stylesheet">
+    <link href="/stylesheets/index.css" rel="stylesheet">
+    <link href="/stylesheets/mask.css" rel="stylesheet">
+    <link href="/stylesheets/admin.css" rel="stylesheet">
+    
+
+    <title>个人中心</title>
 </head>
 <body>
-    
+    <%include header.ejs %>
+    <article>
+    <div class="adminWel"><a href="/">返回我的首页</a> >> 模块名称</div> 
+    <%include AdminLeft.ejs %>
+    <div class="admin_box">
+        <form action="" method="post">
+                    <div>  
+                            <label id="label_username">用户名 <span>*&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp;</span></label>  
+                            <input id="username" name="username" type="text"/>  
+                    
+                    
+                        </div>  
+                    <div>  
+                            <label id="label_reg_password">密 码 <span>*&nbsp;  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp;</span></label>  
+                            <input id="reg_password" name="password" type="password" />  
+                    </div>  
+                     <div>  
+                            <label id="label_repassword">请重复输入密码 <span>*</span></label>  
+                            <input id="repassword" name="repassword" type="password" >  
+                    </div>  
+                    <div>  
+                            <label id="label_phone">手机号码<span> *&nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></label>  
+                            <input id="phone" name="phone" type="text"  />  
+                    </div>  
+                    <div id="button">  
+                        <input type="reset" id="reg_reset" value="重置"/>  
+                        <input type="button"  id="reg_submit" value="提交"/>  
+                    </div>  
+        </form>
+    </div>
+
+    </article>
+
+    <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/sliders.js"></script>
+    <script type="text/javascript" src="/javascripts/l_nav.js"></script>
+    <script type="text/javascript" src="/javascripts/index.js"></script>
 </body>
 </html>

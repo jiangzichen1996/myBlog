@@ -10,32 +10,31 @@
     <link href="/stylesheets/admin.css" rel="stylesheet">
     
 
-    <title>添加博客</title>
+    <title>文章管理</title>
 </head>
 <body>
     <%include header.ejs %>
     <article>
-    <div class="adminWel"><a href="/">返回我的首页</a> >> 模块名称</div> 
+    <div class="adminWel"><a href="/">返回我的首页</a> >> 文章管理</div> 
     <%include AdminLeft.ejs %>
     <div class="admin_box">
-        <form class='addtype' action="/addBlog" method="post">
-            <h3>标题(必填)</h3>
-            <label for="title" class="ct">
-                    <input type="text" class="artile-title" name="title">
-                    存放于
-                    <select name="type_id">
-                         <% for(let i=0;i<types.length;i++){
-                            %>
-                               <option value="<%=types[i].type_id%>"><%=types[i].type_name%></option>
-                            <%}%>
-                    </select>
-            </label>
-            <h3>内容(必填)</h3>
-            
-            <textarea name="content" id="blog_content" cols="30" rows="10"></textarea>
-            <button class="big_btn">发表</button>
-        </form>
+    <h3>共有3篇博客，每页显示40，共3</h3>    
+    <form action="/delete">
+        <div class="choice"><a href="">全选</a><a href="">取消</a><a href="">反向选择</a><a href="">删除选中</a></div>    
+        <ul class="addtype">
+        <% for(let i=0;i<blogs.length;i++){
+        %>
+         <li class="article_lists">
+            <input type="checkbox" name="blog" value="<%=blogs[i].blog_id%>">
+            <%=blogs[i].title%> <%=blogs[i].creat_time%> 
+            </li>
+        <% }  %>
+
+        </ul>
+       
+       
         
+    </form>
     </div>
 
     </article>

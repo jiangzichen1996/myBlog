@@ -22,6 +22,32 @@ module.exports = {
     },
     newblog:(req,res)=>{
         let user = req.session.loginUser;        
-            res.render("newblog",{user});
-    }
+        blogModel.queryAllTypes(user.userId,(rows)=>{
+            let types=rows;
+            res.render('newblog',{user,types})
+        })
+    },
+    adminBlogs:(req,res)=>{
+        let user = req.session.loginUser;  
+        blogModel.queryBlogs(user.userId,(rows)=>{
+                let blogs=rows;
+                res.render('adminBlogs',{user,blogs})
+        });      
+        
+    },
+    addBlog:(req,res)=>{
+        let title=req.body.title;
+        let content=req.body.content;
+        let typeId=req.body.type_id;
+        let user = req.session.loginUser;  
+        console.log(title,typeId,user.userId,content)
+       blogModel.saveBlog(title,typeId,content,user.userId,(rows)=>{
+            if(rows.affectedRows>0){
+                res.redirect('/adminBlogs')
+            }else{
+                res.redirect('/newBlog')
+            }
+       })
+        
+    },
 }

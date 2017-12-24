@@ -1,3 +1,4 @@
+let conn = require('../models/conn')
 module.exports = {
     detail: (req,res)=>{ 
         let user = req.session.loginUser;
@@ -5,7 +6,12 @@ module.exports = {
     },
     index : (req,res)=>{
         let user = req.session.loginUser;
-        res.render('index',{user})
+        conn.query('select * from blog',[],(rows)=>{
+            console.log(rows);
+           
+                res.render('index',{user,rows})
+            
+        })
     },
     blog : (req,res)=>{
         let user = req.session.loginUser;
