@@ -3,6 +3,7 @@ var router = express.Router();
 let user = require('../controllers/user')
 let common = require('../controllers/common')
 let admin = require('../controllers/admin')
+let websocket = require('../models/ws')
 
 router.get('/detail',common.detail);
 router.get('/logout',user.logout);
@@ -16,4 +17,7 @@ router.get('/adminBlogs',admin.adminBlogs);
 router.post('/addBlog',admin.addBlog);
 router.post('/addBlogType',admin.addBlogType);
 router.post('/checkLogin',user.checkLogin);
+router.get('/ws',(req,res)=>{
+    res.render('websocket');
+})
 module.exports = router;

@@ -7,8 +7,7 @@ module.exports = {
     index : (req,res)=>{
         let user = req.session.loginUser;
         conn.query('select * from blog',[],(rows)=>{
-            console.log(rows);
-           
+            
                 res.render('index',{user,rows})
             
         })
