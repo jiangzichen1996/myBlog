@@ -18,6 +18,7 @@ router.post('/addBlog',admin.addBlog);
 router.post('/addBlogType',admin.addBlogType);
 router.post('/checkLogin',user.checkLogin);
 router.get('/ws',(req,res)=>{
-    res.render('websocket');
+    let user = req.session.loginUser;        
+        res.render('websocket',{user})
 })
 module.exports = router;
