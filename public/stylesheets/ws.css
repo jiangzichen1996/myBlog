@@ -1,0 +1,10 @@
+#show{
+    width: 600px;
+    height: 400px;
+    border: 1px solid;
+    display: inline-block;
+}
+.ws_btn{
+    width: 600px;
+    display: inline-block;
+}
